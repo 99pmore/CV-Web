@@ -1,0 +1,45 @@
+@import "variables";
+@import "functions";
+
+@mixin subtitle($border: "main", $color: "text", $device: "movil") {
+    padding: 10px 0;
+    margin: 10px 0 60px;
+
+    text-align: center;
+    font-size: calculate-rem(25);
+
+    @if $device == "laptop" {
+        font-size: calculate-rem(32);
+    }
+
+    @if $device == "pc" {
+        font-size: calculate-rem(40);
+    }
+
+    @if $color == "text" {
+        color: $text;
+    }
+
+    @if $color == "bg" {
+        color: $bg;
+    }
+
+    @if $color == "main" {
+        color: $main;
+    }
+
+    @if $border == "text" {
+        border-top: 1px solid $text;
+        border-bottom: 1px solid $text;
+    }
+
+    @if $border == "bg" {
+        border-top: 1px solid $bg;
+        border-bottom: 1px solid $bg;
+    }
+
+    @if $border == "main" {
+        border-top: 1px solid $main;
+        border-bottom: 1px solid $main;
+    }
+}

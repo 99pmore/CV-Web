@@ -1,0 +1,1092 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital@1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital@1&display=swap");
+@font-face {
+  font-family: 'Blanka';
+  src: url("../../fonts/Blanka-Regular.otf");
+  font-display: swap; }
+@font-face {
+  font-family: 'Blanka';
+  src: url("../../fonts/Blanka-Regular.otf");
+  font-display: swap; }
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+@use "sass:math";
+.hamburger {
+  padding: 15px 15px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible; }
+  .hamburger:hover {
+    opacity: 0.7; }
+  .hamburger.is-active:hover {
+    opacity: 0.7; }
+  .hamburger.is-active .hamburger-inner,
+  .hamburger.is-active .hamburger-inner::before,
+  .hamburger.is-active .hamburger-inner::after {
+    background-color: #fafbfd; }
+
+.hamburger-box {
+  width: 36px;
+  height: 21px;
+  display: inline-block;
+  position: relative; }
+
+.hamburger-inner {
+  display: block;
+  top: 50%; }
+  .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+    width: 36px;
+    height: 3px;
+    background-color: #0a0a0c;
+    border-radius: 6px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease; }
+  .hamburger-inner::before, .hamburger-inner::after {
+    content: "";
+    display: block; }
+  .hamburger-inner::before {
+    top: -9px; }
+  .hamburger-inner::after {
+    bottom: -9px; }
+
+/*
+ * Arrow
+ */
+.hamburger--arrow.is-active .hamburger-inner::before {
+  transform: translate3d(-7.2px, 0, 0) rotate(-45deg) scale(0.7, 1); }
+.hamburger--arrow.is-active .hamburger-inner::after {
+  transform: translate3d(-7.2px, 0, 0) rotate(45deg) scale(0.7, 1); }
+
+/*
+ * Arrow Right
+ */
+.hamburger--arrow-r.is-active .hamburger-inner::before {
+  transform: translate3d(7.2px, 0, 0) rotate(45deg) scale(0.7, 1); }
+.hamburger--arrow-r.is-active .hamburger-inner::after {
+  transform: translate3d(7.2px, 0, 0) rotate(-45deg) scale(0.7, 1); }
+
+/*
+ * Arrow Alt
+ */
+.hamburger--arrowalt .hamburger-inner::before {
+  transition: top 0.1s 0.1s ease, transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1); }
+.hamburger--arrowalt .hamburger-inner::after {
+  transition: bottom 0.1s 0.1s ease, transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1); }
+.hamburger--arrowalt.is-active .hamburger-inner::before {
+  top: 0;
+  transform: translate3d(-7.2px, -9px, 0) rotate(-45deg) scale(0.7, 1);
+  transition: top 0.1s ease, transform 0.1s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22); }
+.hamburger--arrowalt.is-active .hamburger-inner::after {
+  bottom: 0;
+  transform: translate3d(-7.2px, 9px, 0) rotate(45deg) scale(0.7, 1);
+  transition: bottom 0.1s ease, transform 0.1s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22); }
+
+/*
+ * Arrow Alt Right
+ */
+.hamburger--arrowalt-r .hamburger-inner::before {
+  transition: top 0.1s 0.1s ease, transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1); }
+.hamburger--arrowalt-r .hamburger-inner::after {
+  transition: bottom 0.1s 0.1s ease, transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1); }
+.hamburger--arrowalt-r.is-active .hamburger-inner::before {
+  top: 0;
+  transform: translate3d(7.2px, -9px, 0) rotate(45deg) scale(0.7, 1);
+  transition: top 0.1s ease, transform 0.1s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22); }
+.hamburger--arrowalt-r.is-active .hamburger-inner::after {
+  bottom: 0;
+  transform: translate3d(7.2px, 9px, 0) rotate(-45deg) scale(0.7, 1);
+  transition: bottom 0.1s ease, transform 0.1s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22); }
+
+/*
+ * Arrow Turn
+ */
+.hamburger--arrowturn.is-active .hamburger-inner {
+  transform: rotate(-180deg); }
+  .hamburger--arrowturn.is-active .hamburger-inner::before {
+    transform: translate3d(8px, 0, 0) rotate(45deg) scale(0.7, 1); }
+  .hamburger--arrowturn.is-active .hamburger-inner::after {
+    transform: translate3d(8px, 0, 0) rotate(-45deg) scale(0.7, 1); }
+
+/*
+ * Arrow Turn Right
+ */
+.hamburger--arrowturn-r.is-active .hamburger-inner {
+  transform: rotate(-180deg); }
+  .hamburger--arrowturn-r.is-active .hamburger-inner::before {
+    transform: translate3d(-8px, 0, 0) rotate(-45deg) scale(0.7, 1); }
+  .hamburger--arrowturn-r.is-active .hamburger-inner::after {
+    transform: translate3d(-8px, 0, 0) rotate(45deg) scale(0.7, 1); }
+
+/*
+ * Collapse
+ */
+.hamburger--collapse .hamburger-inner {
+  top: auto;
+  bottom: 0;
+  transition-duration: 0.13s;
+  transition-delay: 0.13s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+  .hamburger--collapse .hamburger-inner::after {
+    top: -18px;
+    transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), opacity 0.1s linear; }
+  .hamburger--collapse .hamburger-inner::before {
+    transition: top 0.12s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+.hamburger--collapse.is-active .hamburger-inner {
+  transform: translate3d(0, -9px, 0) rotate(-45deg);
+  transition-delay: 0.22s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+  .hamburger--collapse.is-active .hamburger-inner::after {
+    top: 0;
+    opacity: 0;
+    transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), opacity 0.1s 0.22s linear; }
+  .hamburger--collapse.is-active .hamburger-inner::before {
+    top: 0;
+    transform: rotate(-90deg);
+    transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1); }
+
+/*
+ * Collapse Reverse
+ */
+.hamburger--collapse-r .hamburger-inner {
+  top: auto;
+  bottom: 0;
+  transition-duration: 0.13s;
+  transition-delay: 0.13s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+  .hamburger--collapse-r .hamburger-inner::after {
+    top: -18px;
+    transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), opacity 0.1s linear; }
+  .hamburger--collapse-r .hamburger-inner::before {
+    transition: top 0.12s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+.hamburger--collapse-r.is-active .hamburger-inner {
+  transform: translate3d(0, -9px, 0) rotate(45deg);
+  transition-delay: 0.22s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+  .hamburger--collapse-r.is-active .hamburger-inner::after {
+    top: 0;
+    opacity: 0;
+    transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), opacity 0.1s 0.22s linear; }
+  .hamburger--collapse-r.is-active .hamburger-inner::before {
+    top: 0;
+    transform: rotate(90deg);
+    transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1); }
+
+/*
+ * Minus
+ */
+.hamburger--minus .hamburger-inner::before, .hamburger--minus .hamburger-inner::after {
+  transition: bottom 0.08s 0s ease-out, top 0.08s 0s ease-out, opacity 0s linear; }
+.hamburger--minus.is-active .hamburger-inner::before, .hamburger--minus.is-active .hamburger-inner::after {
+  opacity: 0;
+  transition: bottom 0.08s ease-out, top 0.08s ease-out, opacity 0s 0.08s linear; }
+.hamburger--minus.is-active .hamburger-inner::before {
+  top: 0; }
+.hamburger--minus.is-active .hamburger-inner::after {
+  bottom: 0; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth; }
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #fafbfd;
+  color: #0a0a0c;
+  /*** H E A D E R ***/
+  /*** N A V ***/
+  /*** M A I N ***/
+  /*** F O O T E R  ***/
+  /*** S C R O L L ***/
+  /*** M E D I A  Q U E R I E S ***/
+  /** Tablet **/
+  /** Portatil **/
+  /** PC **/ }
+  body .title h2 {
+    padding: 40px 0 80px;
+    font-family: "Noto Serif", sans-serif;
+    font-size: 3.75rem;
+    text-align: center;
+    color: #00c2cb; }
+  body .main-header {
+    background: url(../../img/bg.jpg) no-repeat center/cover;
+    background-attachment: fixed;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    position: sticky;
+    z-index: 500;
+    padding: 10%;
+    height: 100vh; }
+    body .main-header .logo {
+      position: absolute;
+      top: 10%;
+      right: 10%; }
+    body .main-header .name {
+      color: #00c2cb;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      gap: 20px; }
+      body .main-header .name h1 {
+        font-family: "Blanka", sans-serif;
+        font-size: 3.75rem;
+        letter-spacing: 10px; }
+      body .main-header .name h2 {
+        font-family: "Noto Serif", sans-serif;
+        font-size: 1.25rem;
+        text-align: end;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start; }
+    body .main-header .arrow {
+      width: 100%;
+      position: absolute;
+      left: 0;
+      bottom: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      body .main-header .arrow a {
+        font-size: 2.5rem;
+        color: #fafbfd;
+        animation: arrow 3s ease-out forwards infinite; }
+@keyframes arrow {
+  from {
+    transform: translateY(0);
+    opacity: 0; }
+  to {
+    transform: translateY(30px);
+    opacity: 1; } }
+  body .menu-mob {
+    font-size: 1.375rem;
+    background: rgba(10, 10, 12, 0.95);
+    box-shadow: 0 0 8px #0a0a0c;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    width: 0;
+    height: 100vh;
+    position: fixed;
+    left: -100vw;
+    top: 0;
+    z-index: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: all 0.5s; }
+    body .menu-mob .links {
+      height: 70%;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      flex-direction: column; }
+      body .menu-mob .links a {
+        text-decoration: none;
+        color: #fafbfd;
+        font-size: 1.375rem;
+        transition: transform 0.2s; }
+        body .menu-mob .links a:hover {
+          transform: scale(1.15); }
+        body .menu-mob .links a span {
+          margin-right: 10px; }
+  body .menu-open {
+    width: 75vw;
+    left: 0;
+    transition: all 0.5s; }
+  body .top-bar {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 900; }
+  body main {
+    /*** T O  T O P ***/ }
+    body main .menu-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 600;
+      opacity: 0;
+      width: 0; }
+    body main .visible {
+      background-color: #fafbfd;
+      position: fixed;
+      opacity: 0.5;
+      width: 100%;
+      transition: opacity ease-in 0.5s;
+      display: block; }
+    body main #sobremi {
+      width: 100%;
+      margin: auto;
+      padding: 40px 0; }
+      body main #sobremi .about {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden; }
+        body main #sobremi .about .content {
+          width: 100%;
+          background: url(../../img/bg-sec.jpg) no-repeat bottom/cover;
+          background-attachment: fixed;
+          color: #fafbfd;
+          padding: 40px 20px;
+          font-size: 1rem;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          gap: 20px;
+          position: relative;
+          z-index: 1; }
+        body main #sobremi .about .profile-img {
+          width: 100%;
+          background: linear-gradient(rgba(2, 175, 184, 0.5), rgba(2, 175, 184, 0.5)), url(../../img/profile.webp) no-repeat 0 40%/cover;
+          aspect-ratio: 4/3;
+          transition: transform 0.3s; }
+          body main #sobremi .about .profile-img:hover {
+            transform: scale(1.08); }
+      body main #sobremi .item, body main #sobremi .education .edu-container .item, body main #sobremi .experience .item {
+        height: 360px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px; }
+        body main #sobremi .item .date, body main #sobremi .education .edu-container .item .date {
+          font-size: 1rem;
+          color: #00c2cb; }
+        body main #sobremi .item .org, body main #sobremi .education .edu-container .item .org {
+          font-size: 1.125rem;
+          text-align: center;
+          color: #0a0a0c;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          gap: 20px; }
+        body main #sobremi .item .img, body main #sobremi .education .edu-container .item .img {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          transition: all 0.3s; }
+          body main #sobremi .item .img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 30px 30px -30px #00c2cb; }
+          body main #sobremi .item .img img, body main #sobremi .education .edu-container .item .img img {
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            object-fit: cover; }
+      body main #sobremi .education {
+        padding: 8%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column; }
+        body main #sobremi .education h2 {
+          padding: 10px 0;
+          margin: 10px 0 60px;
+          text-align: center;
+          font-size: 1.5625rem;
+          color: #0a0a0c;
+          border-top: 1px solid #00c2cb;
+          border-bottom: 1px solid #00c2cb; }
+        body main #sobremi .education .edu-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 40px; }
+      body main #sobremi .experience {
+        background: linear-gradient(rgba(2, 175, 184, 0.9), rgba(2, 175, 184, 0.9)), url(../../img/exp/keyboard.webp) no-repeat center/cover;
+        background-attachment: fixed;
+        padding: 8%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column; }
+        body main #sobremi .experience h2 {
+          padding: 10px 0;
+          margin: 10px 0 60px;
+          text-align: center;
+          font-size: 1.5625rem;
+          color: #fafbfd;
+          border-top: 1px solid #0a0a0c;
+          border-bottom: 1px solid #0a0a0c; }
+        body main #sobremi .experience .item .date {
+          color: #fafbfd; }
+      body main #sobremi .knowledge {
+        background: url(../../img/bg-sec.jpg) no-repeat center/cover;
+        background-attachment: fixed;
+        padding: 8%;
+        color: #fafbfd;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column; }
+        body main #sobremi .knowledge h2 {
+          padding: 10px 0;
+          margin: 10px 0 60px;
+          text-align: center;
+          font-size: 1.5625rem;
+          color: #fafbfd;
+          border-top: 1px solid #00c2cb;
+          border-bottom: 1px solid #00c2cb; }
+        body main #sobremi .knowledge .skills {
+          width: 100%;
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          flex-direction: column;
+          gap: 40px; }
+          body main #sobremi .knowledge .skills .skills-list {
+            width: 100%;
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px; }
+            body main #sobremi .knowledge .skills .skills-list li {
+              width: 100%;
+              display: flex;
+              justify-content: space-between; }
+              body main #sobremi .knowledge .skills .skills-list li h3 {
+                width: 100%;
+                text-align: center;
+                padding-bottom: 20px; }
+              body main #sobremi .knowledge .skills .skills-list li .skill-rate {
+                transition: all 0.3s; }
+                body main #sobremi .knowledge .skills .skills-list li .skill-rate:hover {
+                  transform: scale(1.075);
+                  transition: all 0.3s; }
+                  body main #sobremi .knowledge .skills .skills-list li .skill-rate:hover .fa-solid {
+                    color: #00c2cb; }
+        body main #sobremi .knowledge .languages {
+          width: 100%;
+          margin-top: 30px;
+          padding-top: 20px;
+          border-top: 1px solid #00c2cb;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column; }
+          body main #sobremi .knowledge .languages h3 {
+            padding-bottom: 20px; }
+          body main #sobremi .knowledge .languages .languages-cont {
+            width: 100%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px; }
+            body main #sobremi .knowledge .languages .languages-cont h4 {
+              padding-bottom: 20px; }
+            body main #sobremi .knowledge .languages .languages-cont .language p {
+              cursor: pointer;
+              transition: all 0.3s; }
+              body main #sobremi .knowledge .languages .languages-cont .language p:hover {
+                color: #00c2cb; }
+    body main #portfolio {
+      width: 100%;
+      margin: auto;
+      padding: 40px 0; }
+      body main #portfolio .portfolio-grid {
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-auto-rows: 400px; }
+        body main #portfolio .portfolio-grid .card {
+          color: #fafbfd;
+          background: linear-gradient(#00c2cb, black);
+          overflow: hidden;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          flex-direction: column;
+          cursor: pointer; }
+          body main #portfolio .portfolio-grid .card img {
+            width: 100%;
+            height: 100%;
+            opacity: 0.75;
+            object-fit: cover;
+            filter: brightness(90%) grayscale(40%) blur(4px);
+            transform: scale(1.03);
+            transition: all 0.3s ease-in-out; }
+            body main #portfolio .portfolio-grid .card img:hover {
+              opacity: 0.85;
+              filter: grayscale(5%);
+              transform: scale(1.1); }
+          body main #portfolio .portfolio-grid .card .card-text {
+            text-align: center;
+            text-shadow: 2px -2px 6px rgba(10, 10, 12, 0.5);
+            padding: 40px;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; }
+            body main #portfolio .portfolio-grid .card .card-text h3 {
+              font-size: 1.375rem; }
+            body main #portfolio .portfolio-grid .card .card-text p {
+              font-size: 1.125rem; }
+      body main #portfolio .logos {
+        padding: 8%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column; }
+        body main #portfolio .logos h2 {
+          padding: 10px 0;
+          margin: 10px 0 60px;
+          text-align: center;
+          font-size: 1.5625rem;
+          color: #0a0a0c;
+          border-top: 1px solid #00c2cb;
+          border-bottom: 1px solid #00c2cb; }
+        body main #portfolio .logos .logos-grid {
+          width: 100%;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+          grid-auto-rows: 100px;
+          justify-content: space-evenly;
+          gap: 40px; }
+          body main #portfolio .logos .logos-grid img {
+            margin: auto;
+            border-radius: 50%;
+            transition: all 0.3s; }
+            body main #portfolio .logos .logos-grid img:hover {
+              transform: scale(1.1);
+              box-shadow: 0 30px 30px -30px #00c2cb; }
+    body main #contacto {
+      width: 100%;
+      padding: 40px 0;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; }
+      body main #contacto form {
+        position: relative;
+        background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url(../../img/postal.webp);
+        border: 1px solid rgba(0, 193, 203, 0.2);
+        padding: 30px 20px;
+        width: 90%;
+        display: flex;
+        flex-direction: column; }
+        body main #contacto form .input, body main #contacto form .form-inputs input {
+          font-family: "Poppins", sans-serif;
+          background: transparent;
+          color: #0a0a0c;
+          width: 100%;
+          padding: 14px;
+          border: none; }
+          body main #contacto form .input:hover, body main #contacto form .form-inputs input:hover {
+            outline: none;
+            border: 1px solid rgba(10, 10, 12, 0.05);
+            box-shadow: 0 0 10px rgba(10, 10, 12, 0.025); }
+            body main #contacto form .input:hover:not(textarea), body main #contacto form .form-inputs input:hover:not(textarea) {
+              border-bottom: 1px solid rgba(10, 10, 12, 0.25); }
+          body main #contacto form .input:focus, body main #contacto form .form-inputs input:focus {
+            outline: none;
+            border: 1px solid rgba(10, 10, 12, 0.15);
+            box-shadow: 0 0 10px rgba(10, 10, 12, 0.05); }
+        body main #contacto form textarea {
+          max-height: 250px;
+          width: 100% !important;
+          margin-bottom: 40px;
+          resize: vertical; }
+        body main #contacto form .form-inputs {
+          width: 100%;
+          padding-top: 40px;
+          border-top: 1px dashed rgba(10, 10, 12, 0.65);
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-direction: column;
+          gap: 20px; }
+          body main #contacto form .form-inputs input {
+            border-bottom: 1px solid rgba(10, 10, 12, 0.4); }
+            body main #contacto form .form-inputs input[type=submit] {
+              width: 40%;
+              padding: 12px;
+              margin-top: 20px;
+              color: #0a0a0c;
+              border: 1px solid rgba(10, 10, 12, 0.4);
+              font-family: "Poppins", sans-serif;
+              opacity: 0.85;
+              transition: all 0.2s; }
+              body main #contacto form .form-inputs input[type=submit]:hover {
+                opacity: 1;
+                background-color: rgba(10, 10, 12, 0.85);
+                color: #fafbfd; }
+              body main #contacto form .form-inputs input[type=submit]:active {
+                background-color: #0a0a0c; }
+        body main #contacto form .sello {
+          width: 180px;
+          height: 108px;
+          position: absolute;
+          top: -40px;
+          right: -90px;
+          z-index: 200;
+          transform: rotate(-10deg);
+          opacity: 0.55; }
+          body main #contacto form .sello:hover {
+            opacity: 0.75; }
+    body main .arrow-to-top {
+      width: 50px;
+      height: 50px;
+      background-color: rgba(0, 193, 203, 0.5);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      z-index: 10;
+      transition: all 0.2s; }
+      body main .arrow-to-top:hover {
+        background-color: rgba(0, 193, 203, 0.75); }
+      body main .arrow-to-top a {
+        text-decoration: none;
+        color: #fafbfd;
+        font-size: 1.875rem; }
+  body footer {
+    margin-top: 40px;
+    text-align: center;
+    color: #fafbfd;
+    position: sticky;
+    z-index: 100;
+    display: flex;
+    flex-direction: column; }
+    body footer .rrss {
+      background: linear-gradient(rgba(10, 10, 12, 0.4), rgba(10, 10, 12, 0.4)), url(../../img/laptop.jpg) no-repeat center/cover;
+      background-attachment: fixed;
+      min-height: 150px;
+      padding: 5%;
+      background-color: #0a0a0c;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 40px; }
+      body footer .rrss a {
+        text-decoration: none;
+        color: #fafbfd;
+        font-size: 0.625rem;
+        transition: all 0.3s; }
+        body footer .rrss a:nth-child(3) {
+          font-size: 1.125rem; }
+        body footer .rrss a:hover {
+          transform: scale(1.2);
+          text-shadow: 0 0 10px #00c2cb; }
+    body footer .bottom-footer {
+      background-color: #0a0a0c;
+      height: 150px;
+      width: 100%;
+      padding: 0 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+  body::-webkit-scrollbar {
+    background-color: transparent;
+    width: 8px; }
+  body::-webkit-scrollbar-thumb {
+    background-color: #00c2cb;
+    border-radius: 8px; }
+    body::-webkit-scrollbar-thumb:hover {
+      background-color: #02afb8; }
+  @media only screen and (min-width: 600px) {
+    body {
+      /*** H E A D E R ***/
+      /*** N A V ***/
+      /*** M A I N ***/ }
+      body .main-header .name h1 {
+        font-size: 6.875rem;
+        letter-spacing: 10px; }
+      body .main-header .name h2 {
+        font-size: 1.875rem; }
+      body .menu-open {
+        width: 400px; }
+      body main #sobremi .knowledge {
+        flex-direction: column; }
+        body main #sobremi .knowledge .skills .skills-list {
+          width: 70%; }
+          body main #sobremi .knowledge .skills .skills-list li {
+            flex-direction: row; }
+      body main #portfolio .portfolio-grid .card .card-text h3 {
+        font-size: 1.5rem; }
+      body main #portfolio .portfolio-grid .card .card-text p {
+        font-size: 1.25rem; }
+      body main #contacto form {
+        padding: 30px;
+        width: 80%; }
+        body main #contacto form .input, body main #contacto form .form-inputs input {
+          padding: 16px; }
+        body main #contacto form .form-inputs {
+          gap: 40px; }
+          body main #contacto form .form-inputs input[type=submit] {
+            padding: 14px; }
+        body main #contacto form .sello {
+          top: -30px;
+          right: -40px; } }
+  @media only screen and (min-width: 992px) {
+    body {
+      /*** H E A D E R ***/
+      /*** N A V ***/
+      /*** M A I N ***/ }
+      body .title h2 {
+        font-size: 4.375rem; }
+      body .main-header .name {
+        flex-direction: row; }
+        body .main-header .name h1 {
+          font-size: 7.5rem;
+          letter-spacing: 10px; }
+        body .main-header .name h2 {
+          font-size: 2.5rem;
+          justify-content: center; }
+      body .menu-mob {
+        background: rgba(250, 251, 253, 0.4);
+        box-shadow: none;
+        width: 100%;
+        height: 60px;
+        position: sticky;
+        transition: none;
+        justify-content: space-between;
+        flex-direction: row; }
+        body .menu-mob .links {
+          margin: auto;
+          height: 100%;
+          width: 60%;
+          border-bottom: 1px solid #00c2cb;
+          flex-direction: row; }
+          body .menu-mob .links a {
+            color: #0a0a0c;
+            font-size: 1.125rem; }
+            body .menu-mob .links a span {
+              display: none; }
+      body .menu-open {
+        width: 0px;
+        left: -420px; }
+      body .top-bar {
+        display: none; }
+      body main #sobremi .about {
+        flex-direction: row; }
+        body main #sobremi .about .content {
+          width: 50%;
+          padding: 40px;
+          font-size: 1.125rem; }
+        body main #sobremi .about .profile-img {
+          width: 50%; }
+      body main #sobremi .item-lt, body main #sobremi .education .edu-container .item, body main #sobremi .experience .item {
+        width: 25%;
+        justify-content: space-between; }
+        body main #sobremi .item-lt .date, body main #sobremi .education .edu-container .item .date, body main #sobremi .experience .item .date {
+          font-size: 1.125rem; }
+        body main #sobremi .item-lt .org, body main #sobremi .education .edu-container .item .org, body main #sobremi .experience .item .org {
+          font-size: 1.25rem; }
+        body main #sobremi .item-lt .img, body main #sobremi .education .edu-container .item .img, body main #sobremi .experience .item .img {
+          transition: all 0.3s; }
+          body main #sobremi .item-lt .img:hover, body main #sobremi .education .edu-container .item .img:hover, body main #sobremi .experience .item .img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 30px 30px -30px #00c2cb; }
+      body main #sobremi .education {
+        padding: 5%; }
+        body main #sobremi .education h2 {
+          padding: 10px 0;
+          margin: 10px 0 60px;
+          text-align: center;
+          font-size: 1.5625rem;
+          font-size: 2rem;
+          color: #0a0a0c;
+          border-top: 1px solid #00c2cb;
+          border-bottom: 1px solid #00c2cb; }
+        body main #sobremi .education .edu-container {
+          gap: 60px; }
+      body main #sobremi .experience {
+        padding: 5%;
+        flex-direction: row; }
+        body main #sobremi .experience h2 {
+          padding: 10px 0;
+          margin: 10px 0 60px;
+          text-align: center;
+          font-size: 1.5625rem;
+          font-size: 2rem;
+          color: #fafbfd;
+          border-top: 1px solid #0a0a0c;
+          border-bottom: 1px solid #0a0a0c; }
+        body main #sobremi .experience .item .date {
+          color: #fafbfd; }
+      body main #sobremi .knowledge {
+        padding: 5%;
+        flex-direction: column; }
+        body main #sobremi .knowledge h2 {
+          padding: 10px 0;
+          margin: 10px 0 60px;
+          text-align: center;
+          font-size: 1.5625rem;
+          font-size: 2rem;
+          color: #fafbfd;
+          border-top: 1px solid #00c2cb;
+          border-bottom: 1px solid #00c2cb; }
+        body main #sobremi .knowledge .skills {
+          flex-direction: row;
+          align-items: flex-start; }
+          body main #sobremi .knowledge .skills .skills-list {
+            width: 25%; }
+            body main #sobremi .knowledge .skills .skills-list h3 {
+              font-size: 1.375rem; }
+            body main #sobremi .knowledge .skills .skills-list li {
+              flex-direction: row; }
+        body main #sobremi .knowledge .languages h3 {
+          font-size: 1.375rem; }
+        body main #sobremi .knowledge .languages .languages-cont {
+          justify-content: space-evenly;
+          flex-direction: row;
+          font-size: 1.125rem; }
+      body main #portfolio header h2 {
+        font-size: 3.75rem; }
+      body main #portfolio .portfolio-grid .card .card-text h3 {
+        font-size: 1.625rem; }
+      body main #portfolio .portfolio-grid .card .card-text p {
+        font-size: 1.375rem; }
+      body main #portfolio .logos {
+        padding: 5%; }
+        body main #portfolio .logos h2 {
+          padding: 10px 0;
+          margin: 10px 0 60px;
+          text-align: center;
+          font-size: 1.5625rem;
+          font-size: 2rem;
+          color: #0a0a0c;
+          border-top: 1px solid #00c2cb;
+          border-bottom: 1px solid #00c2cb; }
+      body main #contacto {
+        overflow: visible; }
+        body main #contacto form {
+          padding: 40px;
+          width: 75%;
+          flex-direction: row; }
+          body main #contacto form .input, body main #contacto form .form-inputs input {
+            padding: 20px; }
+          body main #contacto form textarea {
+            max-height: 100%;
+            width: 55% !important;
+            margin-right: 40px;
+            margin-bottom: 0; }
+          body main #contacto form .form-inputs {
+            width: 45%;
+            padding-left: 40px;
+            padding-top: 0;
+            border-left: 1px dashed rgba(10, 10, 12, 0.65);
+            border-top: none; }
+            body main #contacto form .form-inputs input[type=submit] {
+              padding: 14px; }
+          body main #contacto form .sello {
+            top: auto;
+            right: auto;
+            bottom: -30px;
+            left: -40px; }
+      body footer .rrss {
+        padding: 0;
+        gap: 100px; }
+        body footer .rrss a {
+          font-size: 1.125rem; }
+          body footer .rrss a:nth-child(3) {
+            font-size: 1.75rem; } }
+  @media only screen and (min-width: 1300px) {
+    body {
+      /*** H E A D E R ***/
+      /*** N A V ***/
+      /*** M A I N ***/ }
+      body .title h2 {
+        font-size: 4.375rem; }
+      body .main-header .name {
+        flex-direction: row; }
+        body .main-header .name h1 {
+          font-size: 9.375rem;
+          letter-spacing: 10px; }
+        body .main-header .name h2 {
+          font-size: 3.125rem;
+          justify-content: center; }
+      body .menu-mob {
+        background: rgba(250, 251, 253, 0.4);
+        box-shadow: none;
+        width: 100%;
+        height: 60px;
+        position: sticky;
+        transition: none;
+        justify-content: space-between;
+        flex-direction: row; }
+        body .menu-mob .links {
+          height: 100%;
+          width: 60%;
+          margin: auto;
+          border-bottom: 1px solid #00c2cb;
+          flex-direction: row; }
+          body .menu-mob .links a {
+            color: #0a0a0c;
+            font-size: 1.125rem; }
+            body .menu-mob .links a span {
+              display: none; }
+      body .menu-open {
+        width: 0px;
+        left: -420px; }
+      body .top-bar {
+        display: none; }
+      body main #sobremi .about {
+        flex-direction: row; }
+        body main #sobremi .about .content {
+          width: 50%;
+          padding: 40px;
+          font-size: 1.125rem; }
+        body main #sobremi .about .profile-img {
+          width: 50%; }
+      body main #sobremi .item-pc, body main #sobremi .education .edu-container .item, body main #sobremi .experience .item {
+        width: 25%;
+        justify-content: space-between; }
+        body main #sobremi .item-pc .date, body main #sobremi .education .edu-container .item .date, body main #sobremi .experience .item .date {
+          font-size: 1.125rem; }
+        body main #sobremi .item-pc .org, body main #sobremi .education .edu-container .item .org, body main #sobremi .experience .item .org {
+          font-size: 1.25rem; }
+        body main #sobremi .item-pc .img, body main #sobremi .education .edu-container .item .img, body main #sobremi .experience .item .img {
+          transition: all 0.3s; }
+          body main #sobremi .item-pc .img:hover, body main #sobremi .education .edu-container .item .img:hover, body main #sobremi .experience .item .img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 30px 30px -30px #00c2cb; }
+      body main #sobremi .education {
+        padding: 5%; }
+        body main #sobremi .education h2 {
+          padding: 10px 0;
+          margin: 10px 0 60px;
+          text-align: center;
+          font-size: 1.5625rem;
+          font-size: 2.5rem;
+          color: #0a0a0c;
+          border-top: 1px solid #00c2cb;
+          border-bottom: 1px solid #00c2cb; }
+        body main #sobremi .education .edu-container {
+          justify-content: space-between;
+          gap: 80px; }
+      body main #sobremi .experience {
+        padding: 5%;
+        flex-direction: row; }
+        body main #sobremi .experience h2 {
+          padding: 10px 0;
+          margin: 10px 0 60px;
+          text-align: center;
+          font-size: 1.5625rem;
+          font-size: 2.5rem;
+          color: #fafbfd;
+          border-top: 1px solid #0a0a0c;
+          border-bottom: 1px solid #0a0a0c; }
+        body main #sobremi .experience .item .date {
+          color: #fafbfd; }
+      body main #sobremi .knowledge {
+        padding: 5%;
+        flex-direction: column; }
+        body main #sobremi .knowledge h2 {
+          padding: 10px 0;
+          margin: 10px 0 60px;
+          text-align: center;
+          font-size: 1.5625rem;
+          font-size: 2.5rem;
+          color: #fafbfd;
+          border-top: 1px solid #00c2cb;
+          border-bottom: 1px solid #00c2cb; }
+        body main #sobremi .knowledge .skills {
+          flex-direction: row;
+          align-items: flex-start; }
+          body main #sobremi .knowledge .skills .skills-list {
+            width: 25%; }
+            body main #sobremi .knowledge .skills .skills-list h3 {
+              font-size: 1.5rem; }
+            body main #sobremi .knowledge .skills .skills-list li {
+              flex-direction: row; }
+              body main #sobremi .knowledge .skills .skills-list li .skill-title {
+                font-size: 1.125rem; }
+              body main #sobremi .knowledge .skills .skills-list li .skill-rate {
+                font-size: 1.125rem; }
+        body main #sobremi .knowledge .languages h3 {
+          font-size: 1.5rem; }
+        body main #sobremi .knowledge .languages .languages-cont {
+          justify-content: space-evenly;
+          flex-direction: row;
+          font-size: 1.125rem; }
+      body main #portfolio header h2 {
+        font-size: 3.75rem; }
+      body main #portfolio .portfolio-grid .card .card-text h3 {
+        font-size: 1.625rem; }
+      body main #portfolio .portfolio-grid .card .card-text p {
+        font-size: 1.375rem; }
+      body main #portfolio .logos {
+        padding: 5%; }
+        body main #portfolio .logos h2 {
+          padding: 10px 0;
+          margin: 10px 0 60px;
+          text-align: center;
+          font-size: 1.5625rem;
+          font-size: 2.5rem;
+          color: #0a0a0c;
+          border-top: 1px solid #00c2cb;
+          border-bottom: 1px solid #00c2cb; }
+      body main #contacto {
+        overflow: visible; }
+        body main #contacto form {
+          padding: 40px;
+          width: 65%;
+          flex-direction: row; }
+          body main #contacto form .input, body main #contacto form .form-inputs input {
+            padding: 20px; }
+          body main #contacto form textarea {
+            max-height: 100%;
+            width: 55% !important;
+            margin-right: 40px;
+            margin-bottom: 0; }
+          body main #contacto form .form-inputs {
+            width: 45%;
+            padding-left: 40px;
+            padding-top: 0;
+            border-left: 1px dashed rgba(10, 10, 12, 0.65);
+            border-top: none; }
+            body main #contacto form .form-inputs input[type=submit] {
+              padding: 14px; }
+          body main #contacto form .sello {
+            top: auto;
+            right: auto;
+            bottom: -30px;
+            left: -40px; }
+      body footer .rrss {
+        padding: 0;
+        gap: 100px; }
+        body footer .rrss a {
+          font-size: 1.125rem; }
+          body footer .rrss a:nth-child(3) {
+            font-size: 1.75rem; } }
+
+/*# sourceMappingURL=style.css.map */

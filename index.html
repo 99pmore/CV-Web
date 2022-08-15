@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pablo Moreno Martín</title>
+
+    <meta name="description" content="Soy Pablo Moreno, Desarrollador Web graduado en Ingeniería Informática.">
+    <meta name="keywords" content="curriculum, diseño, desarrollo, web, html, css, scss, javascript, angular">
+    <meta name="author" content="Pablo Moreno">
+
+    <link rel="icon" type="image/x-icon" href="img/icon.ico">
+    <link rel="stylesheet" href="styles/css/style.css">
+    <link href="styles/css/hamburgers.css" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/cce30af7f6.js" crossorigin="anonymous"></script>
+    <script async src="js/script.js"></script>
+</head>
+
+<body>
+
+    <header id="inicio" class="main-header">
+        <div class="logo">
+            <img src="img/logo.webp" alt="Logo" height="150" width="150">
+        </div>
+        <div class="name">
+            <h1>Pablo Moreno Martin</h1>
+            <h2>Desarrollador web</h2>
+        </div>
+        <div class="arrow"><a href="#sobremi"><i class="fa-solid fa-angle-down"></i></a></div>
+    </header>
+
+    <div class="top-bar">
+        <button id="burger" class="hamburger hamburger--collapse" type="button" onclick="toggleMenu()">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
+    </div>
+    <div id="menu-mob" class="menu menu-mob">
+        <div class="links">
+            <a href="#inicio"><span><i class="fa-solid fa-house"></i></span>Inicio</a>
+            <a href="#sobremi"><span><i class="fa-solid fa-hand"></i></span>Sobre mí</a>
+            <a href="#portfolio"><span><i class="fa-solid fa-desktop"></i></span>Portfolio</a>
+            <a href="#contacto"><span><i class="fa-solid fa-at"></i></span>Contacto</a>
+        </div>
+    </div>
+
+    <main>
+        <div id="menu-bg" class="menu-bg" onclick="toggleMenu()"></div>
+
+        <section id="sobremi">
+            <header class="title">
+                <h2>Sobre mí</h2>
+            </header>
+
+            <div class="about">
+                <div class="content">
+                    <p>
+                        Soy Graduado en Ingeniería Informática por la Universidad Politécnica de Madrid y actualmente estudio
+                        el Máster en Desarrollo Web FullStack de la Escuela Internacional de Posgrados. Paralelamente, también me gusta realizar cursos
+                        para complementar mi formación en el desarrollo web.
+                    </p>
+                    <p>
+                        Realicé un periodo de prácticas en desarrollo de movilidad iOS en la empresa INETUM durante siete meses.
+                    </p>
+                    <p>
+                        Sobre mis aptitudes puedo decir que tengo experiencia trabajando en equipo, capacidad de aprendizaje
+                        rápido y que sé trabajar bajo presión. También me considero una persona creativa y perfeccionista, responsable y
+                        empática.
+                    </p>
+                    <p>
+                        Entre mis intereses personales se encuentran el diseño gráfico en un nivel aficionado, los viajes, leer y las series de televisión.
+                    </p>
+                </div>
+                <div class="profile-img"></div>
+            </div>
+
+            <div class="education">
+                <h2>Educación</h2>
+                <div class="edu-container">
+                    <div class="item">
+                        <div class="date">
+                            <p>2015 - 2017</p>
+                        </div>
+                        <div class="org">
+                            <h3>Bachillerato tecnológico</h3>
+                            <p>CEU San Pablo Montepríncipe</p>
+                        </div>
+                        <div class="img">
+                            <img src="img/edu/ceu.webp" alt="Logo CEU San Pablo" width="100" height="100">
+                        </div>
+                    </div>
+    
+                    <div class="item">
+                        <div class="date">
+                            <p>sep. 2017 - feb. 2022</p>
+                        </div>
+                        <div class="org">
+                            <h3>Grado en Ingeniería Informática</h3>
+                            <p>Universidad Politécnica de Madrid</p>
+                        </div>
+                        <div class="img">
+                            <img src="img/edu/upm.webp" alt="Logo UPM" width="100" height="100">
+                        </div>
+                    </div>
+    
+                    <div class="item">
+                        <div class="date">
+                            <p>may. 2022 - actualidad</p>
+                        </div>
+                        <div class="org">
+                            <h3>Máster en Desarrollo Web FullStack</h3>
+                            <p>Escuela Internacional de Posgrados</p>
+                        </div>
+                        <div class="img">
+                            <img src="img/edu/eip.webp" alt="Logo EIP" width="100" height="100">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experience">
+                <h2>Experiencia</h2>
+                <div class="item">
+                    <div class="date">
+                        <p>sep. 2021 - mar. 2022</p>
+                    </div>
+                    <div class="org">
+                        <h3>Prácticas en Desarrollo de movilidad iOS</h3>
+                        <p>INETUM España</p>
+                    </div>
+                    <div class="img">
+                        <img src="img/exp/inetum.webp" alt="Logo Inetum" width="100" height="100">
+                    </div>
+                </div>
+            </div>
+
+            <div class="knowledge">
+                <h2>Competencias</h2>
+                <div class="skills">
+                    <ul class="skills-list">
+                        <li><h3>Lenguajes</h3></li>
+                        <li>
+                            <span class="skill-title">HTML5</span>
+                            <span class="skill-rate">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="skill-title">CSS3</span>
+                            <span class="skill-rate">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="skill-title">SCSS</span>
+                            <span class="skill-rate">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="skill-title">JavaScript</span>
+                            <span class="skill-rate">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="skill-title">Java</span>
+                            <span class="skill-rate">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="skill-title">Swift</span>
+                            <span class="skill-rate">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="skill-title">C</span>
+                            <span class="skill-rate">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="skill-title">Python</span>
+                            <span class="skill-rate">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </span>
+                        </li>
+                    </ul>
+
+                    <ul class="skills-list">
+                        <li><h3>Herramientas</h3></li>
+                        <li>
+                            <span class="skill-title">Bootstrap</span>
+                            <span class="skill-rate">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="skill-title">Tailwind</span>
+                            <span class="skill-rate">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="skill-title">Spring Boot</span>
+                            <span class="skill-rate">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="skill-title">MongoDB</span>
+                            <span class="skill-rate">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="skill-title">Bases SQL</span>
+                            <span class="skill-rate">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="skill-title">GitHub</span>
+                            <span class="skill-rate">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="skill-title">CocoaPods</span>
+                            <span class="skill-rate">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </span>
+                        </li>
+                    </ul>
+
+                    <ul class="skills-list">
+                        <li><h3>Software</h3></li>
+                        <li>
+                            <span class="skill-title">Visual Studio Code</span>
+                            <span class="skill-rate">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="skill-title">Eclipse</span>
+                            <span class="skill-rate">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="skill-title">NetBeans</span>
+                            <span class="skill-rate">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="skill-title">Xcode</span>
+                            <span class="skill-rate">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="skill-title">Android Studio</span>
+                            <span class="skill-rate">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="skill-title">PostMan</span>
+                            <span class="skill-rate">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="skill-title">JustInMind</span>
+                            <span class="skill-rate">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="skill-title">VirtualBox</span>
+                            <span class="skill-rate">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="skill-title">Maple</span>
+                            <span class="skill-rate">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="skill-title">Microsoft Office</span>
+                            <span class="skill-rate">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="languages">
+                    <h3>Idiomas</h3>
+                    <div class="languages-cont">
+                        <div class="language">
+                            <h4>Inglés</h4>
+                            <p>B2 - Cambridge University</p>
+                        </div>
+                        <div class="language">
+                            <h4>Español</h4>
+                            <p>Nativo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio">
+            <header class="title">
+                <h2>Portfolio</h2>
+            </header>
+            <div class="portfolio-grid">
+                <div class="card" onclick="location.href='index.html'">
+                    <img loading="lazy" src="img/portfolio/miweb.webp" alt="Vista previa de la web">
+                    <div class="card-text">
+                        <h3>Esta web</h3>
+                        <p>&#128516</p>
+                    </div>
+                </div>
+                <div class="card" onclick="location.href=''">
+                    <img loading="lazy" src="img/portfolio/mytho.webp" alt="Vista previa de la web Mytho">
+                    <div class="card-text">
+                        <h3>Mytho</h3>
+                        <p>Sitio web sobre mitología</p>
+                    </div>
+                </div>
+                <div class="card" onclick="location.href=''">
+                    <img loading="lazy" src="img/portfolio/yourney.webp" alt="Vista previa de la app Yourney">
+                    <div class="card-text">
+                        <h3>Yourney</h3>
+                        <p>App iOS para gestión de viajes en grupo</p>
+                    </div>
+                </div>
+            </div>
+            <div class="logos">
+                <h2>Como hobbie, también hago logos</h2>
+                <div class="logos-grid">
+                    <img src="img/portfolio/logos/mytho.webp" alt="Logo mytho" width="100" height="100">
+                    <img src="img/portfolio/logos/yourney.webp" alt="Logo yourney" width="100" height="100">
+                    <img src="img/portfolio/logos/madrid.webp" alt="Logo madrid tenedor" width="100" height="100">
+                    <img src="img/portfolio/logos/rfef.webp" alt="Logo RFEF rediseñado" width="100" height="100">
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto">
+            <header class="title">
+                <h2>Contacta conmigo</h2>
+            </header>
+            <form action="">
+                <textarea class="input" name="textarea" id="textarea" cols="30" rows="20" required placeholder="* Mensaje"></textarea>
+                <div class="form-inputs">
+                    <input class="input" type="text" id="nombre" name="nombre" required placeholder="* Nombre" />
+                    <input class="input" type="text" id="apellidos" name="apellidos" required placeholder="* Apellidos" />
+                    <input class="input" type="email" id="email" name="email" required placeholder="* Email"/>
+                    <input type="submit" value="Enviar">
+                </div>
+                <div class="sello">
+                    <img src="img/sello.png" alt="Sello con el logo de la web" width="200" height="120">
+                </div>
+            </form>
+        </section>
+
+        <div class="arrow-to-top">
+            <a href="#inicio"><i class="fa-solid fa-angle-up"></i></a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="rrss">
+            <a href="https://www.linkedin.com/in/pablomorenom" target="_blank"><i class="fa-brands fa-linkedin fa-4x"></i></a>
+            <a href="https://github.com/99pmore" target="_blank"><i class="fa-brands fa-github fa-4x"></i></a>
+            <a href="https://quill-spark-3af.notion.site/CV-Pablo-Moreno-Mart-n-68686053b8e94ec2bab3244ed01616a6" target="_blank">notion</a>
+            <a href="docs/CV Pablo Moreno Martin.pdf" download="CV_Pablo_Moreno_Martin"><i class="fa-solid fa-file-arrow-down fa-4x"></i> CV</a>
+        </div>
+        <div class="bottom-footer">
+            <p>Pablo Moreno | Todos los derechos reservados</p>
+            <div class="logo">
+                <img src="img/logo-light.webp" alt="Logo" height="125" width="125">
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

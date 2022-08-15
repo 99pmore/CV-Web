@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'Blanka';
+    src: url("../../fonts/Blanka-Regular.otf");
+    font-display: swap;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital@1&display=swap');
+
+$font-header: 'Blanka', sans-serif;
+$font-title: 'Noto Serif', sans-serif;
+$font: 'Poppins', sans-serif;
+
+$main: #00c2cb;
+$bg: #fafbfd;
+$text: #0a0a0c;
+$details: #44444c;
+$sec-details: #949495;
