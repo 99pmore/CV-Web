@@ -672,12 +672,21 @@ body {
 
             &:hover {
                 background-color: rgba(0, 193, 203, 0.75);
+
+                a {
+                    animation: to-top 2s ease-out forwards infinite;
+                }
             }
 
             a {
                 text-decoration: none;
                 color: $bg;
                 font-size: calculate-rem(30);
+            }
+
+            @keyframes to-top {
+                from {transform: translateY(5px); opacity: 0;}
+                to { transform: translateY(-2.5px); opacity: 1;}
             }
         }
     }

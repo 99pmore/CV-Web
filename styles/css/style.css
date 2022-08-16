@@ -672,10 +672,19 @@ body {
       transition: all 0.2s; }
       body main .arrow-to-top:hover {
         background-color: rgba(0, 193, 203, 0.75); }
+        body main .arrow-to-top:hover a {
+          animation: to-top 2s ease-out forwards infinite; }
       body main .arrow-to-top a {
         text-decoration: none;
         color: #fafbfd;
         font-size: 1.875rem; }
+@keyframes to-top {
+  from {
+    transform: translateY(5px);
+    opacity: 0; }
+  to {
+    transform: translateY(-2.5px);
+    opacity: 1; } }
   body footer {
     margin-top: 40px;
     text-align: center;
