@@ -363,11 +363,12 @@ body {
           z-index: 1; }
         body main #sobremi .about .profile-img {
           width: 100%;
-          background: linear-gradient(rgba(2, 175, 184, 0.5), rgba(2, 175, 184, 0.5)), url(../../img/profile.jpg) no-repeat 0 60%/cover;
+          background: linear-gradient(rgba(2, 175, 184, 0.5), rgba(2, 175, 184, 0.5)), url(../../img/profile.jpg) no-repeat 0 55%/cover;
           aspect-ratio: 4/3;
+          transform: scale(1.25);
           transition: transform 0.3s; }
           body main #sobremi .about .profile-img:hover {
-            transform: scale(1.08); }
+            transform: scale(1.35); }
       body main #sobremi .item, body main #sobremi .education .edu-container .item, body main #sobremi .experience .item {
         height: 360px;
         display: flex;
@@ -711,6 +712,11 @@ body {
         transition: all 0.3s; }
         body footer .rrss a:nth-child(3) {
           font-size: 1.125rem; }
+        body footer .rrss a:last-child {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px; }
         body footer .rrss a:hover {
           transform: scale(1.2);
           text-shadow: 0 0 10px #00c2cb; }

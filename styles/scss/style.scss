@@ -224,13 +224,14 @@ body {
 
                 .profile-img {
                     width: 100%;
-                    background: linear-gradient(rgba(2, 175, 184, 0.5), rgba(2, 175, 184, 0.5)), url(../../img/profile.jpg) no-repeat 0 60% / cover;
+                    background: linear-gradient(rgba(2, 175, 184, 0.5), rgba(2, 175, 184, 0.5)), url(../../img/profile.jpg) no-repeat 0 55% / cover;
                     aspect-ratio: 4/3;
 
+                    transform: scale(1.25);
                     transition: transform 0.3s;
 
                     &:hover {
-                        transform: scale(1.08);
+                        transform: scale(1.35);
                     }
                 }
             }
@@ -728,6 +729,13 @@ body {
 
                 &:nth-child(3) {
                     font-size: calculate-rem(18);
+                }
+
+                &:last-child {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 10px;
                 }
 
                 &:hover {
